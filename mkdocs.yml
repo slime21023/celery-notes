@@ -1,0 +1,162 @@
+site_name: Celery Notes
+site_description: 全面學習 Celery、RabbitMQ、Celery Beat 和 Kombu 的筆記
+site_author: Your Name
+site_url: https://your-site-url.com
+
+# 版本控制信息
+# repo_name: celery-notes
+repo_url: https://github.com/yourusername/celery-notes
+edit_uri: edit/main/docs/
+
+# 主題配置
+theme:
+  name: material
+  language: zh-TW
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: 切換至深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: 切換至淺色模式
+  icon:
+    repo: fontawesome/brands/github
+  favicon: assets/images/favicon.png
+  # logo: assets/images/logo.png
+
+# 擴展功能
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# 插件
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - mkdocstrings:
+      default_handler: python
+
+# 額外配置
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/yourusername
+
+# 導航結構
+nav:
+  - 首頁: index.md
+  - 分散式任務處理基礎:
+    - basics/index.md
+    - 異步任務處理概念: basics/async-concepts.md
+    - 消息隊列基本原理: basics/message-queue-principles.md
+    - 生產者-消費者模型: basics/producer-consumer-model.md
+    - 任務分發與執行流程: basics/task-distribution-flow.md
+  
+  - RabbitMQ 核心:
+    - rabbitmq/index.md
+    - AMQP 協議理解: rabbitmq/amqp-protocol.md
+    - RabbitMQ 安裝與配置: rabbitmq/installation-configuration.md
+    - 交換機(Exchange)類型與用途:
+      - rabbitmq/exchanges/index.md
+      - Direct Exchange: rabbitmq/exchanges/direct.md
+      - Topic Exchange: rabbitmq/exchanges/topic.md
+      - Fanout Exchange: rabbitmq/exchanges/fanout.md
+      - Headers Exchange: rabbitmq/exchanges/headers.md
+    - 隊列(Queue)管理: rabbitmq/queue-management.md
+    - 消息持久化: rabbitmq/message-persistence.md
+    - RabbitMQ 監控與管理工具: rabbitmq/monitoring-management.md
+  
+  - Celery 基礎:
+    - celery/index.md
+    - Celery 架構: celery/architecture.md
+    - 任務定義與執行: celery/task-definition-execution.md
+    - 結果後端(Result Backend): celery/result-backend.md
+    - 任務狀態追蹤: celery/task-status-tracking.md
+    - 錯誤處理與重試機制: celery/error-handling-retry.md
+  
+  - Celery 進階功能:
+    - celery/advanced/index.md
+    - 工作流(Canvas):
+      - celery/advanced/canvas/index.md
+      - Chain: celery/advanced/canvas/chain.md
+      - Group: celery/advanced/canvas/group.md
+      - Chord: celery/advanced/canvas/chord.md
+      - Map & Starmap: celery/advanced/canvas/map-starmap.md
+    - 任務路由: celery/advanced/task-routing.md
+    - 任務優先級: celery/advanced/task-priority.md
+    - 並發控制: celery/advanced/concurrency-control.md
+    - 遠程調用(RPC): celery/advanced/remote-procedure-calls.md
+  
+  - Celery Beat:
+    - celery-beat/index.md
+    - 定時任務配置: celery-beat/scheduled-tasks.md
+    - Crontab 表達式: celery-beat/crontab-expressions.md
+    - 動態調度: celery-beat/dynamic-scheduling.md
+    - 持久化調度器: celery-beat/persistent-scheduler.md
+  
+  - Kombu 深入學習:
+    - kombu/index.md
+    - Kombu 架構: kombu/architecture.md
+    - 消息序列化: kombu/message-serialization.md
+    - 傳輸層抽象: kombu/transport-abstraction.md
+    - 自定義消費者: kombu/custom-consumers.md
+    - 自定義生產者: kombu/custom-producers.md
+  
+  - 整合與最佳實踐:
+    - integration/index.md
+    - Celery 與 Web 框架整合: integration/web-frameworks.md
+    - 監控與日誌: integration/monitoring-logging.md
+    - 性能優化: integration/performance-optimization.md
+    - 擴展性設計: integration/scalability-design.md
+    - 高可用配置: integration/high-availability.md
+  
+  - 進階主題與實戰:
+    - advanced/index.md
+    - 複雜業務場景實現: advanced/complex-business-scenarios.md
+    - 微服務架構中的應用: advanced/microservices-integration.md
+    - 大規模部署: advanced/large-scale-deployment.md
+    - 容器化與 Kubernetes 部署: advanced/containerization-kubernetes.md
+  
+  - 附錄:
+    - 學習資源: appendix/learning-resources.md
+    - 常見問題解答: appendix/faq.md
+    - 術語表: appendix/glossary.md
